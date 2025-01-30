@@ -1,0 +1,114 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.logo img {
+  height: 48px;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none; /* Hidden on larger screens */
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: var(--foreground-color);
+}
+
+.navLinks {
+  display: flex; /* Default for larger screens */
+  list-style: none;
+  gap: 2rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navLinks li {
+  cursor: pointer;
+  font-family: "Bebas Neue Pro Bold", sans-serif;
+  color: var(--foreground-color);
+  transition: color 0.2s;
+}
+
+.navLinks li:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show hamburger icon */
+  }
+
+  .navLinks {
+    display: none; /* Hide links by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-top: 1px solid var(--foreground-color);
+    gap: 1rem; /* Add spacing for mobile */
+  }
+
+  .navLinks li:hover {
+    color: var(--secondary-color);
+  }
+
+  .navLinks.open {
+    display: flex; /* Show links when the hamburger is clicked */
+  }
+}
+
+/* === Responsive Utilities === */
+/* @media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .navLinks {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: var(--breakpoint-tablet)) and (max-width: var(--breakpoint-desktop)) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: var(--breakpoint-desktop)) {
+  body {
+    font-size: 20px;
+  }
+} */
