@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./parallelogram.module.css";
 
-const Parallelogram = ({ width, height, color, top, left, children, backImage, scale }) => {
+const Parallelogram = ({ width, height, color, top, left, children, backImage, zIndex, scale }) => {
   return (
     <div
       className={styles.parallelogram}
@@ -15,7 +15,7 @@ const Parallelogram = ({ width, height, color, top, left, children, backImage, s
         backgroundRepeat: "no-repeat",
         backgroundSize: "auto",
         backgroundPosition: "0 center", // Shift image to the right by 100px (adjust as needed)
-        zIndex: 1,
+        zIndex: zIndex || -1,
         scale: scale  }}
     >
       <div className={styles.content}>{children}</div>

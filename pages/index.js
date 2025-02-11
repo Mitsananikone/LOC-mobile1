@@ -10,15 +10,17 @@ import ScreenWidthDisplay from "@/components/screenWidthDisplay/ScreenWidthDispl
 
 const styles = {
   centerContainer: {
-    marginTop: '20px', 
+    marginTop: '8vh', 
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: '100%',
-    zIndex: -1,
-    padding: '16px 16px', 
-    overflow: 'hidden'
+    height: '100vh',
+
+    overflow: 'auto',
+    zIndex: 1,
+    // padding: '16px 16px', 
+    // overflow: 'hidden'
   },
   // sections: {
   //   display: 'flex',
@@ -30,13 +32,12 @@ const styles = {
   //   background: 'var(--background-color)',
   //   //  border: '1px solid blue'
   // },
-  // background: {
-  //   height: 'auto', // Auto height for mobile
-  //   width: '100%', // Full width on mobile
-  //   margin: '20px 0', // Reduced margin for mobile
-  //   padding: '20px', // Reduced padding for mobile
-  //    border: '1px solid green'
-  // },
+  background: {
+    height: 'auto', // Auto height for mobile
+    width: '100%', // Full width on mobile
+    margin: '20px 0', // Reduced margin for mobile
+    padding: '20px', // Reduced padding for mobile
+  },
   // homepageBackground: {
   //   position: 'relative',
   //   top: '0', // Reset top position for mobile
@@ -49,17 +50,17 @@ export default function Home() {
     <>
       <div style={styles.centerContainer}>
 
-          <div>
+          {/* <div>
             <section id="home">
               <HomePage />
             </section>
-          </div> 
+          </div>  */}
 
-          {/* <div style={styles.background}>
+          <div style={styles.background}>
             <section id="meetPerrins">
               <MeetThePerrins />
             </section>
-          </div> */}
+          </div>
 
           {/* Uncomment and style other sections as needed */}
           {/* <div style={styles.background}>
