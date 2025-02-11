@@ -7,13 +7,13 @@ function MeetPerrins() {
       display: "flex",
       justifyContent: "center",
       alignItems: "flex-start",
-      height: "100vh",
+      height: "auto", // Allow the container to grow based on content
       backgroundColor: "var(--background-color)",
       padding: "20px",
-      overflow: "auto", // Enable scrolling
+      overflow: "visible", // Ensure content is visible
     },
     title: {
-      fontSize: "1.rem",
+      fontSize: "1.5rem", // Adjusted for mobile
       color: "var(--primary-color)",
       textAlign: "center",
       marginBottom: "20px",

@@ -69,15 +69,16 @@ function HomePage() {
       minHeight: "100vh", // Ensure the container takes up the full viewport height
       maxWidth: "100vw",
       marginTop: "-50px",
+      overflow: "auto", // Enable scrolling
     },
     contentContainer: {
       flex: 1, // Allow this container to grow and take up remaining space
-      height: "100%",
       width: "100%",
       position: "relative",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      overflow: "visible", // Ensure content is visible
     },
     imageGrid: {
       display: "grid",

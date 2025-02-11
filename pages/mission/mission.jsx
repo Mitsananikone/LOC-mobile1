@@ -1,7 +1,5 @@
 import React from "react";
 import Parallelogram from "@/components/parallelogram/parallelogram";
-import styles from "./mission.module.css";
-// import "@/styles/globals.css";
 
 function Mission() {
   const missionData = [
@@ -40,82 +38,180 @@ function Mission() {
     },
   ];
 
+  // Define styles
+  const styles = {
+    centerContainer: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      padding: "0px",
+      backgroundColor: "var(--background-color)",
+      border: "1px solid green",
+    },
+    background: {
+      width: "100%",
+      maxWidth: "1200px",
+      margin: "0 auto",
+      padding: "20px",
+      border: "1px solid yellow",
+    },
+    title: {
+      fontSize: "1.5rem",
+      color: "var(--primary-color)",
+      textAlign: "center",
+      marginBottom: "40px",
+    },
+    contentRow: {
+      display: "flex",
+      border: "1px solid red",
+      flexDirection: "column", // Use columns for stacking
+      justifyContent: "center", // Center content horizontally
+      alignItems: "center", // Center content vertically
+      gap: "0px",
+      marginBottom: "40px",
+    },
+    parallelogramContainer: {
+      flex: "0 0 auto",
+      marginBottom: "20px", // Add space below the parallelogram
+    },
+    textContainerRight: {
+      flex: 1,
+      maxWidth: "100%", // Take full width of the screen
+      padding: "0 20px", // Add padding for better readability
+      "@media (max-width: 768px)": {
+        padding: "0 10px", // Adjust padding for mobile
+      },
+    },
+    missionSection: {
+      position: "relative",
+      zIndex: 1,
+      textAlign: "center", // Center text inside the parallelogram
+      transform: "skew(20deg)",
+    },
+    missionNumber: {
+      color: "var(--foreground-color)",
+      fontSize: "2.6rem",
+      fontStyle: "normal",
+    },
+    missionTitle: {
+      fontSize: "1.8rem",
+      color: "var(--primary-color)",
+      marginBottom: "20px",
+      textAlign: "center", // Center title text
+    },
+    missionPoints: {
+      fontSize: "1.2rem",
+      lineHeight: "1.6",
+      color: "var(--primary-color)",
+      textAlign: "left", // Align points to the left
+      "@media (max-width: 768px)": {
+        textAlign: "left", // Keep text aligned left on mobile
+      },
+    },
+    contentRowSquareLong: {
+      display: "flex",
+      flexDirection: "column", // Stack vertically by default
+      justifyContent: "center", // Center content vertically
+      alignItems: "center", // Center content horizontally
+      gap: "20px", // Space between image and text
+      marginBottom: "40px",
+    },
+    profileImageSquare: {
+      width: "100%",
+      maxWidth: "400px", // Default size for desktop
+      height: "auto",
+      border: "1px solid var(--primary-color)",
+      borderRadius: "8px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      "@media (max-width: 768px)": {
+        maxWidth: "300px", // Reduce image size for mobile
+      },
+    },
+    description: {
+      fontSize: "1.2rem",
+      lineHeight: "1.6",
+      color: "var(--primary-color)",
+      textAlign: "center", // Center text
+      padding: "0 20px", // Add padding for better readability
+      "@media (max-width: 768px)": {
+        padding: "0 10px", // Adjust padding for mobile
+      },
+    },
+  };
+
   return (
-    <div className="centerContainer">
-      <div className="background">
+    <div style={styles.centerContainer}>
+      <div style={styles.background}>
         {/* Header */}
-        <h1 className="title">
+        <h1 style={styles.title}>
           <i className="fa-solid fa-hand-holding-heart"></i> Our Mission
         </h1>
 
         {/* Mission Sections */}
         {missionData.map((mission, index) => (
-          <div key={index} className="contentRow">
-            <div className="parallelogramContainer">
+          <div key={index} style={styles.contentRow}>
+            <div style={styles.parallelogramContainer}>
               <Parallelogram
                 width="100px"
                 height="100px"
-                color="var(--secondary-color)"
+                color="var(--secondary-color)" // Ensure color is passed
                 top="0vh"
                 left="0vw"
               >
-                <div className={styles.missionSection}>
-                  <h1
-                    style={{
-                      color: "var(--foreground-color)",
-                      fontSize: "2.6rem",
-                      fontStyle: "normal",
-                    }}
-                  >
-                    {mission.number}
-                  </h1>
+                <div style={styles.missionSection}>
+                  <h1 style={styles.missionNumber}>{mission.number}</h1>
                 </div>
               </Parallelogram>
             </div>
-            <div className={styles.textContainerRight}>
+            <div style={styles.textContainerRight}>
               <div>
-                <h2>{mission.title}</h2>
+                <h2 style={styles.missionTitle}>{mission.title}</h2>
                 <br />
-                <ul>
+                <div style={styles.missionPoints}>
                   {mission.points.map((point, i) =>
                     Array.isArray(point) ? (
-                      <ul key={i}>
+                      <div key={i}>
                         {point.map((subPoint, j) => (
-                          <li key={j}>{subPoint}</li>
+                          <p key={j} style={{ marginBottom: "10px" }}>
+                            {subPoint}
+                          </p>
                         ))}
-                      </ul>
+                      </div>
                     ) : (
-                      <li key={i}>{point}</li>
+                      <p key={i} style={{ marginBottom: "10px" }}>
+                        {point}
+                      </p>
                     )
                   )}
-                </ul>
+                </div>
               </div>
             </div>
           </div>
         ))}
 
         {/* Why Alvin Section */}
-        <h1 className="title">
-          <i className="fa-solid fa-location-dot"></i> Why Alvin?
-        </h1>
-        <div className="contentRowSquareLong">
-        <img
-  src="/images/alvinNeighborhood.png"
-  alt="Family Perrin"
-  className={styles.profileImageSquare}
-/>
-
-          <p className="description">
-            Simply put, the Northern Brazoria County Area is one of the fastest
-            growing areas connected to Houston. The Alvin ISD is the 7th fastest
-            growing school district in Texas, with a projection to grow by 7000
-            students in the next 10 years.
-            <br /> <br/>
-            Alvin is next on TxDOT's plan to expand highway 99, projecting 4000
-            new home builds during that time. The fact is, Alvin is going to
-            need more Gospel-centered churches.
-          </p>
-        </div>
+        <h1 style={styles.title}>
+  <i className="fa-solid fa-location-dot"></i> Why Alvin?
+</h1>
+<div style={styles.contentRowSquareLong}>
+  <img
+    src="/images/alvinNeighborhood.png"
+    alt="Alvin Neighborhood"
+    style={styles.profileImageSquare}
+  />
+  <p style={styles.description}>
+    Simply put, the Northern Brazoria County Area is one of the fastest
+    growing areas connected to Houston. The Alvin ISD is the 7th fastest
+    growing school district in Texas, with a projection to grow by 7000
+    students in the next 10 years.
+    <br /> <br />
+    Alvin is next on TxDOT's plan to expand highway 99, projecting 4000
+    new home builds during that time. The fact is, Alvin is going to
+    need more Gospel-centered churches.
+  </p>
+</div>
       </div>
     </div>
   );
