@@ -2,8 +2,7 @@
   position: relative;
   display: inline-block;
   transform: skew(-20deg); /* Adjust skew angle */
-  overflow: hidden;
-  text-align: center;
+  text-align: left;
   position: relative; /* Relative positioning */
 }
 
@@ -13,6 +12,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: left;
 }
 
