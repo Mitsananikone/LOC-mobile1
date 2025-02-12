@@ -11,6 +11,7 @@ function MeetPerrins() {
       backgroundColor: "var(--background-color)",
       padding: "20px",
       overflow: "visible", // Ensure content is visible
+      maxWidth: "100vw", // Ensure it doesn't exceed the viewport width
     },
     title: {
       fontSize: "1.5rem", // Adjusted for mobile

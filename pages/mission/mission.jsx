@@ -48,14 +48,13 @@ function Mission() {
       width: "100%",
       padding: "0px",
       backgroundColor: "var(--background-color)",
-      border: "1px solid green",
+      maxWidth: "100vw", // Ensure it doesn't exceed the viewport width
     },
     background: {
       width: "100%",
       maxWidth: "1200px",
       margin: "0 auto",
       padding: "20px",
-      border: "1px solid yellow",
     },
     title: {
       fontSize: "1.5rem",
@@ -65,7 +64,6 @@ function Mission() {
     },
     contentRow: {
       display: "flex",
-      border: "1px solid red",
       flexDirection: "column", // Use columns for stacking
       justifyContent: "center", // Center content horizontally
       alignItems: "center", // Center content vertically
@@ -96,13 +94,13 @@ function Mission() {
       fontStyle: "normal",
     },
     missionTitle: {
-      fontSize: "1.8rem",
+      fontSize: "1.3rem",
       color: "var(--primary-color)",
       marginBottom: "20px",
       textAlign: "center", // Center title text
     },
     missionPoints: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       lineHeight: "1.6",
       color: "var(--primary-color)",
       textAlign: "left", // Align points to the left
@@ -130,7 +128,7 @@ function Mission() {
       },
     },
     description: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       lineHeight: "1.6",
       color: "var(--primary-color)",
       textAlign: "center", // Center text

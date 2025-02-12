@@ -67,9 +67,10 @@ function HomePage() {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh", // Ensure the container takes up the full viewport height
-      maxWidth: "100vw",
+      maxWidth: "100vw", // Ensure it doesn't exceed the viewport width
       marginTop: "-50px",
-      overflow: "auto", // Enable scrolling
+      overflow: "auto", // Enable vertical scrolling
+      overflowX: "hidden", // Disable horizontal scrolling
     },
     contentContainer: {
       flex: 1, // Allow this container to grow and take up remaining space
