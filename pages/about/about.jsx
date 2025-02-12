@@ -27,7 +27,6 @@ const styles = {
     gap: "15px",
     width: "100%",
     marginBottom: "40px",
-    marginTop: "100px",
   },
   logoImage: {
     height: "100px",

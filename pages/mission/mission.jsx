@@ -132,7 +132,7 @@ function Mission() {
       fontSize: "1rem",
       lineHeight: "1.6",
       color: "var(--primary-color)",
-      textAlign: "center", // Center text
+      textAlign: "left", // Center text
       padding: "0 20px", // Add padding for better readability
       "@media (max-width: 768px)": {
         padding: "0 10px", // Adjust padding for mobile

@@ -37,6 +37,7 @@ const Navbar = () => {
           { label: "Meet the Perrins", id: "meetPerrins" },
           { label: "Our Mission", id: "mission" },
           { label: "Our Services", id: "services" },
+          { label: "Location", id: "location" },
           { label: "Name and Logo Story", id: "about" },
           { label: "Contact Us", id: "contact" },
         ].map(({ label, id }, index) => (

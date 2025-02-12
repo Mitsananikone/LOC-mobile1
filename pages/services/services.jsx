@@ -79,14 +79,14 @@ function Services() {
     },
   };
 
-  // Dummy data for services (replace with your actual data)
+  // Service data with proper links
   const services = [
-    { id: 1, title: "Sunday Worship", image: "/images/services-churchservice.png", link: "/sunday-worship" },
-    { id: 2, title: "Bible Study", image: "/images/services-bibleStudy.png", link: "/bible-study" },
-    { id: 3, title: "Youth Group", image: "/images/services-youthGroup.png", link: "/youth-group" },
-    { id: 4, title: "Community Outreach", image: "/images/services-communityOutreach.png", link: "/community-outreach" },
-    { id: 5, title: "Prayer Meetings", image: "/images/services-prayerMeetings.png", link: "/prayer-meetings" },
-    { id: 6, title: "Music Ministry", image: "/images/services-musicMinistery.png", link: "/music-ministry" },
+    { id: 1, title: "Sunday Worship", image: "/images/services-churchservice.png", link: "/services/servicesInfo/sunday-worship" },
+    { id: 2, title: "Bible Study", image: "/images/services-bibleStudy.png", link: "/services/servicesInfo/bible-study" },
+    { id: 3, title: "Youth Group", image: "/images/services-youthGroup.png", link: "/services/servicesInfo/youth-group" },
+    { id: 4, title: "Community Outreach", image: "/images/services-communityOutreach.png", link: "/services/servicesInfo/community-outreach" },
+    { id: 5, title: "Prayer Meetings", image: "/images/services-prayerMeetings.png", link: "/services/servicesInfo/prayer-meetings" },
+    { id: 6, title: "Music Ministry", image: "/images/services-musicMinistery.png", link: "/services/servicesInfo/music-ministry" },
   ];
 
   return (
