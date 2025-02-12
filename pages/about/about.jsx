@@ -1,49 +1,81 @@
 import React from "react";
 import Parallelogram from "@/components/parallelogram/parallelogram";
-import styles from "./about.module.css";
-// import "@/styles/globals.css";
+
+// Styles consolidated at the top
+const styles = {
+  centerContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    padding: "20px",
+    backgroundColor: "var(--background-color)",
+    maxWidth: "100vw", // Ensure it doesn't exceed the viewport width
+  },
+  background: {
+    width: "100%",
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "20px",
+  },
+  logoTitleContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "15px",
+    width: "100%",
+    marginBottom: "40px",
+    marginTop: "100px",
+  },
+  logoImage: {
+    height: "100px",
+    width: "auto",
+  },
+  title: {
+    fontSize: "1.6rem",
+    color: "var(--primary-color)",
+    margin: "0",
+    textAlign: "center",
+  },
+  parallelogramWrapper: {
+    position: "relative",
+    zIndex: 1,
+    width: "100%",
+    marginBottom: "0px", // Space between the two parallelograms
+  },
+  parallelogramContent: {
+    position: "relative",
+    zIndex: 1,
+    textAlign: "left",
+    transform: "skew(20deg)",
+    padding: "0px",
+  },
+};
 
 function About() {
   return (
-    <div className={styles.aboutContainer}>
-      {/* Flex container for logo and title */}
-      <div className={styles.logoTitleContainer}>
-        <div className={styles.logo}>
-          <img src="./images/LOClogoBlackCircle.png" alt="Logo" />
+    <div style={styles.centerContainer}>
+      <div style={styles.background}>
+        {/* Flex container for logo and title */}
+        <div style={styles.logoTitleContainer}>
+          <div>
+            <img src="./images/LOClogoBlackCircle.png" alt="Logo" style={styles.logoImage} />
+          </div>
+          <h1 style={styles.title}>About the Name and Logo</h1>
         </div>
-        <h1 className={styles.title}>About the Name and Logo</h1>
-      </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          position: "relative",
-          gap: "20px", // Optional: Adds spacing between parallelograms
-        }}
-      >
-        {/* 1st parallelogram */}
-        <div style={{ position: "relative", zIndex: 1 }}>
+        {/* First Parallelogram */}
+        <div style={styles.parallelogramWrapper}>
           <Parallelogram
-            width="550px"
-            height="500px"
+            width="400px" // Overlap the screen edges
+            height="300px" // Adjust height as needed
             color="var(--secondary-color)"
             top="0vh"
-            left="0vw"
+            left="-20vw" // Shift left to overlap the screen
           >
-            <div
-              style={{
-                position: "relative",
-                zIndex: 1,
-                textAlign: "left",
-                transform: "skew(20deg)",
-              }}
-            >
-              <h2>
-                Embracing a city <br /> and a promise
-              </h2>
-              <br />
+            <div style={styles.parallelogramContent}>
               <p>
                 The city of Alvin is known for its Southern Oak Trees. The
                 city's official logo once highlighted Alvin's first meeting
@@ -53,31 +85,17 @@ function About() {
           </Parallelogram>
         </div>
 
-        {/* 2nd parallelogram */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            marginLeft: "-50px", // Adjust for overlap
-          }}
-        >
+        {/* Second Parallelogram */}
+        <div style={styles.parallelogramWrapper}>
           <Parallelogram
-            width="500px"
-            height="480px"
+            width="400px" // Overlap the screen edges
+            height="440px" // Adjust height as needed
             color="var(--primary-color)"
-            top="10vh"
-            left="-5vw"
+            top="-5vh"
+            left="-20vw"
             backImage="url('/images/kintsugi.png')"
           >
-            <div
-              style={{
-                position: "relative",
-                zIndex: 1,
-                textAlign: "left",
-                transform: "skew(20deg)",
-                color: "var(--foreground-color)",
-              }}
-            >
+            <div style={{ ...styles.parallelogramContent, color: "var(--primary-color)" }}>
               <h2>Kintsugi means golden repair</h2>
               <br />
               <p>

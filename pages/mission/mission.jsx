@@ -73,6 +73,7 @@ function Mission() {
     parallelogramContainer: {
       flex: "0 0 auto",
       marginBottom: "20px", // Add space below the parallelogram
+      marginTop: "20px",
     },
     textContainerRight: {
       flex: 1,
@@ -152,9 +153,9 @@ function Mission() {
           <div key={index} style={styles.contentRow}>
             <div style={styles.parallelogramContainer}>
               <Parallelogram
-                width="100px"
-                height="100px"
-                color="var(--secondary-color)" // Ensure color is passed
+                width="80px"
+                height="80px"
+                color="var(--primary-color)" // Ensure color is passed
                 top="0vh"
                 left="0vw"
               >

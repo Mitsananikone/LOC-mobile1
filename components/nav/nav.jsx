@@ -7,22 +7,19 @@ const Navbar = () => {
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const offset = 0; // Adjust this if you have additional padding/margins
-      const sectionTop = section.offsetTop - offset;
-
-      window.scrollTo({
-        top: sectionTop,
-        behavior: "smooth",
-      });
+      section.scrollIntoView({ behavior: "smooth" });
     }
-    setMenuOpen(false);
+    setMenuOpen(false); // Close the mobile menu after clicking a link
   };
 
   return (
     <nav className={styles.navbar}>
+      {/* Logo */}
       <div className={styles.logo} onClick={() => handleNavClick("home")}>
         <img src="./images/LOCnavLogo.png" alt="Logo" />
       </div>
+
+      {/* Hamburger Menu (Mobile) */}
       <div
         className={styles.hamburger}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -32,13 +29,14 @@ const Navbar = () => {
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
+
+      {/* Navigation Links */}
       <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
         {[
           { label: "Home", id: "home" },
           { label: "Meet the Perrins", id: "meetPerrins" },
           { label: "Our Mission", id: "mission" },
-          { label: "The Plan", id: "plan" },
-          { label: "Resources", id: "resources" },
+          { label: "Our Services", id: "services" },
           { label: "Name and Logo Story", id: "about" },
           { label: "Contact Us", id: "contact" },
         ].map(({ label, id }, index) => (

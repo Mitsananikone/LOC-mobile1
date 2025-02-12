@@ -2,8 +2,8 @@ import React from "react";
 import HomePage from "@/pages/home/homepage";
 import MeetThePerrins from "./meetPerrins/meetPerrins";
 import Mission from "./mission/mission";
-import Plan from "./plan/plan";
-import Resources from "./resources/resources";
+import Services from "./services/services";
+import Location from "./location/location"; // Import the new component
 import About from "./about/about";
 import Contact from "./contact/contact";
 import ScreenWidthDisplay from "@/components/screenWidthDisplay/ScreenWidthDisplay";
@@ -27,6 +27,9 @@ const styles = {
     margin: "10px 0", // Reduced margin for mobile
     padding: "0px", // Reduced padding for mobile
   },
+  section: {
+    scrollMarginTop: "10vh", // Add 10vh margin to the top of each section
+  },
 };
 
 export default function Home() {
@@ -35,44 +38,52 @@ export default function Home() {
       <div style={styles.centerContainer}>
         {/* HomePage Section */}
         <div style={styles.background}>
-          <section id="home">
+          <section id="home" style={styles.section}>
             <HomePage />
           </section>
         </div>
 
         {/* MeetThePerrins Section */}
         <div style={styles.background}>
-          <section id="meetPerrins">
+          <section id="meetPerrins" style={styles.section}>
             <MeetThePerrins />
           </section>
         </div>
 
-        {/* Uncomment and style other sections as needed */}
-       <div style={styles.background}>
-          <section id="mission">
+        {/* Mission Section */}
+        <div style={styles.background}>
+          <section id="mission" style={styles.section}>
             <Mission />
           </section>
         </div>
-         {/* <div style={styles.background}>
-          <section id="plan">
-            <Plan />
+
+        {/* Services Section */}
+        <div style={styles.background}>
+          <section id="services" style={styles.section}>
+            <Services />
           </section>
         </div>
+
+        {/* Location Section */}
         <div style={styles.background}>
-          <section id="resources">
-            <Resources />
+          <section id="location" style={styles.section}>
+            <Location />
           </section>
         </div>
+
+        {/* About Section */}
         <div style={styles.background}>
-          <section id="about">
+          <section id="about" style={styles.section}>
             <About />
           </section>
         </div>
+
+        {/* Contact Section */}
         <div style={styles.background}>
-          <section id="contact">
+          <section id="contact" style={styles.section}>
             <Contact />
           </section>
-        </div> */}
+        </div>
       </div>
 
       {/* <ScreenWidthDisplay /> */}

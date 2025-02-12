@@ -62,15 +62,16 @@ function HomePage() {
     }
   `;
 
-  const styles = {
+  const styles =  {
     homeContainer: {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh", // Ensure the container takes up the full viewport height
       maxWidth: "100vw", // Ensure it doesn't exceed the viewport width
-      marginTop: "-50px",
+       marginTop: "-4.5vh",
       overflow: "auto", // Enable vertical scrolling
       overflowX: "hidden", // Disable horizontal scrolling
+ 
     },
     contentContainer: {
       flex: 1, // Allow this container to grow and take up remaining space
@@ -85,19 +86,20 @@ function HomePage() {
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)", // 2 columns
       gridAutoRows: "100px", // Reduced height for all rows
-      gap: "10px", // Space between grid items
-      justifyContent: "center", // Center the grid horizontally
-      alignItems: "stretch", // Stretch items to fill the row height
-      padding: "10px", // Reduced padding around the grid
+      gap: "0px", // Space between grid items
+      justifyItems: "center", // Center the grid items horizontally
+      alignItems: "center", // Center the grid items vertically
+      padding: "0px", // Reduced padding around the grid
       width: "100%", // Ensure the grid takes full width
-      maxWidth: "600px", // Limit the maximum width of the grid
+      height: "50%",
+      maxWidth: "300px", // Limit the maximum width of the grid
       margin: "0 auto", // Center the grid container
       backgroundColor: "var(--background-color)", // Optional: Add background color
     },
     resizedImage: {
       width: "100%", // Make images fill their grid cells
-      height: "auto", // Maintain aspect ratio
-      maxWidth: "100px", // Limit the maximum size of the images
+      height: "80%", // Maintain aspect ratio
+      maxWidth: "60%", // Limit the maximum size of the images
       objectFit: "contain", // Ensure images fit within their container
       borderRadius: "8px",
       backgroundColor: "var(--background-color)",
