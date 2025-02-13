@@ -78,7 +78,7 @@ function CommunityOutreach() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-hands-helping"></i> Community Outreach
+        <i className="fa-solid fa-hands-helping" aria-hidden="true"></i> Community Outreach
       </h1>
 
       {/* Image */}

@@ -78,7 +78,7 @@ function BibleStudy() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-book-bible"></i> Bible Study
+        <i className="fa-solid fa-book-bible" aria-hidden="true"></i> Bible Study
       </h1>
 
       {/* Image */}

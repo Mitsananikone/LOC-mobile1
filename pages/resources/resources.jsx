@@ -32,7 +32,7 @@ function Resources() {
       <div className="background">
         {/* Header */}
         <h1 className="title">
-          <i className="fa-solid fa-oil-well"></i> Resources
+          <i className="fa-solid fa-oil-well" aria-hidden="true"></i> Resources
         </h1>
         <h3>To carry out this project, we need the following resources:</h3>
 
@@ -59,7 +59,7 @@ function Resources() {
 
         {/* Additional Sections */}
         <h1 className="title" style={{ marginTop: "100px" }}>
-          <i className="fa-solid fa-people-roof"></i> We Need You
+          <i className="fa-solid fa-people-roof" aria-hidden="true"></i> We Need You
         </h1>
         <p className="description">
           We aim to launch with 30-40 adults from Heights Baptist Church,
@@ -79,7 +79,7 @@ function Resources() {
         </p>
 
         <h1 className="title" style={{ marginTop: "100px" }}>
-          <i className="fa-solid fa-church"></i> We Need Funding
+          <i className="fa-solid fa-church" aria-hidden="true"></i> We Need Funding
         </h1>
         <p className={styles.description}>
           We are blessed to have financial support from our sending church,
@@ -94,7 +94,7 @@ function Resources() {
           <li>
           <div className={styles.iconAndText}>
            
-          <h2 style={{ margin: "20px", display: "flex", alignItems: "center", gap: "20px" }}> <i class="fa-solid fa-seedling fa-sm"></i> Year 1 budget: $100,000</h2>
+          <h2 style={{ margin: "20px", display: "flex", alignItems: "center", gap: "20px" }}> <i class="fa-solid fa-seedling fa-sm" aria-hidden="true"></i> Year 1 budget: $100,000</h2>
             </div>
             <ul class="no-bullets">
             <li style={{ marginLeft: "50px" }}>
@@ -111,7 +111,7 @@ function Resources() {
             <div className={styles.iconAndText}>
              
             <h2 style={{ margin: "20px", display: "flex", alignItems: "center", gap: "20px" }}>
-  <i className="fa-solid fa-seedling fa-lg"></i>
+  <i className="fa-solid fa-seedling fa-lg" aria-hidden="true"></i>
   Year 2 budget: $100,000
 </h2>
             </div>
@@ -129,7 +129,7 @@ function Resources() {
           <li>
             <div className={styles.iconAndText}>
               
-            <h2 style={{ margin: "20px", display: "flex", alignItems: "center", gap: "20px" }}><i class="fa-solid fa-tree fa-xl"></i>Year 3 budget: $100,000</h2>
+            <h2 style={{ margin: "20px", display: "flex", alignItems: "center", gap: "20px" }}><i class="fa-solid fa-tree fa-xl" aria-hidden="true"></i>Year 3 budget: $100,000</h2>
             </div>
             <ul class="no-bullets">
             <li style={{ marginLeft: "50px" }}>

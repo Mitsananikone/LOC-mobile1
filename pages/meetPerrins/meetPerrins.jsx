@@ -58,7 +58,7 @@ function MeetPerrins() {
       <div>
         {/* Header */}
         <h1 style={styles.title}>
-          <i className="fa-solid fa-user"></i> Meet the Perrins
+          <i className="fa-solid fa-user" aria-hidden="true"></i> Meet the Perrins
         </h1>
 
         {/* Cary Perrin Section */}

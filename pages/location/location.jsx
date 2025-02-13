@@ -58,7 +58,7 @@ function Location() {
       <div>
         {/* Header */}
         <h1 style={styles.title}>
-          <i className="fa-solid fa-map-marker-alt"></i> Location
+          <i className="fa-solid fa-map-marker-alt" aria-hidden="true"></i> Location
         </h1>
 
         {/* Location Image */}

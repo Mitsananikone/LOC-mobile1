@@ -69,7 +69,7 @@ function SundayWorship() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-church"></i> Sunday Worship
+        <i className="fa-solid fa-church" aria-hidden="true"></i> Sunday Worship
       </h1>
 
       {/* Image */}

@@ -32,16 +32,29 @@ const Navbar = () => {
     };
   }, [timer]);
 
-  // Function to handle navigation clicks
+  // // Function to handle navigation clicks
+  // const handleNavClick = (sectionId) => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  //   setMenuOpen(false); // Close the mobile menu after clicking a link
+  //   showNavbar(); // Show the navbar and reset the timer
+  // };
+
   const handleNavClick = (sectionId) => {
+    console.log(`Attempting to scroll to section: ${sectionId}`); // Debugging
     const section = document.getElementById(sectionId);
     if (section) {
+      console.log(`Section found: ${sectionId}`); // Debugging
       section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error(`Section not found: ${sectionId}`); // Debugging
     }
     setMenuOpen(false); // Close the mobile menu after clicking a link
     showNavbar(); // Show the navbar and reset the timer
   };
-
+  
   return (
     <nav
       className={`${styles.navbar} ${navbarVisible ? styles.visible : styles.hidden}`}

@@ -145,7 +145,7 @@ function Mission() {
       <div style={styles.background}>
         {/* Header */}
         <h1 style={styles.title}>
-          <i className="fa-solid fa-hand-holding-heart"></i> Our Mission
+          <i className="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Our Mission
         </h1>
 
         {/* Mission Sections */}
@@ -192,7 +192,7 @@ function Mission() {
 
         {/* Why Alvin Section */}
         <h1 style={styles.title}>
-  <i className="fa-solid fa-location-dot"></i> Why Alvin?
+  <i className="fa-solid fa-location-dot" aria-hidden="true"></i> Why Alvin?
 </h1>
 <div style={styles.contentRowSquareLong}>
   <img

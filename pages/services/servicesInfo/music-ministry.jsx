@@ -69,7 +69,7 @@ function MusicMinistry() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-music"></i> Music Ministry
+        <i className="fa-solid fa-music" aria-hidden="true"></i> Music Ministry
       </h1>
 
       {/* Image */}

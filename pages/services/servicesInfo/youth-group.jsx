@@ -69,7 +69,7 @@ function YouthGroup() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-users"></i> Youth Group
+        <i className="fa-solid fa-users" aria-hidden="true"></i> Youth Group
       </h1>
 
       {/* Image */}

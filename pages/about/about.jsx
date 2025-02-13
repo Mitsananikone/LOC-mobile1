@@ -90,7 +90,7 @@ function About() {
             width="400px" // Overlap the screen edges
             height="440px" // Adjust height as needed
             left="-20vw"
-            backImage="url('/images/kintsugi.png')"
+            backImage="url('/images/Kintsugi.png')"
             zIndex="2"
           >
             <div style={{ ...styles.parallelogramContent }}>

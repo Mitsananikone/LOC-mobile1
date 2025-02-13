@@ -78,7 +78,7 @@ function ChildCare() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-child"></i> Child Care
+        <i className="fa-solid fa-child" aria-hidden="true"></i> Child Care
       </h1>
 
       {/* Image */}

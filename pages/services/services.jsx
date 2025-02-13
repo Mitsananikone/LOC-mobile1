@@ -94,7 +94,7 @@ function Services() {
       <div>
         {/* Header */}
         <h1 style={styles.title}>
-          <i className="fa-solid fa-church"></i> Services
+          <i className="fa-solid fa-church" aria-hidden="true"></i> Services
         </h1>
 
         {/* Services Grid */}

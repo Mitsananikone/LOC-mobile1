@@ -10,7 +10,7 @@ function Plan() {
       {/* Header Section */}
       <div className={styles.header}>
         <h1 className={styles.title}>
-          <i className="fa-solid fa-clipboard-list"></i> The Plan
+          <i className="fa-solid fa-clipboard-list" aria-hidden="true"></i> The Plan
         </h1>
       </div>
 
