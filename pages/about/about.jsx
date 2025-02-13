@@ -89,8 +89,6 @@ function About() {
           <Parallelogram
             width="400px" // Overlap the screen edges
             height="440px" // Adjust height as needed
-            color="var(--primary-color)"
-            top="-5vh"
             left="-20vw"
             backImage="url('/images/kintsugi.png')"
           >
