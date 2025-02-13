@@ -8,12 +8,13 @@ const Navbar = () => {
   const [timer, setTimer] = useState(null);
   const [isClient, setIsClient] = useState(false);
 
+  // Initialize smoothscroll polyfill and set isClient to true
   useEffect(() => {
-    // This code will only run on the client
-    setIsClient(true);
     smoothscroll.polyfill(); // Initialize smoothscroll polyfill
+    setIsClient(true); // Ensure this runs only on the client side
   }, []);
 
+  // Show navbar on touch and hide it after 10 seconds
   const showNavbar = () => {
     setNavbarVisible(true);
     clearTimeout(timer);
@@ -23,6 +24,7 @@ const Navbar = () => {
     setTimer(newTimer);
   };
 
+  // Add touch event listener to show navbar
   useEffect(() => {
     if (isClient) {
       const handleTouch = () => {
@@ -37,8 +39,9 @@ const Navbar = () => {
     }
   }, [timer, isClient]);
 
+  // Handle navigation link clicks
   const handleNavClick = (sectionId) => {
-    if (isClient) {  // Ensure this runs only on the client side
+    if (isClient) {
       console.log(`Attempting to scroll to section: ${sectionId}`);
       const section = document.getElementById(sectionId);
       if (section) {
@@ -53,20 +56,29 @@ const Navbar = () => {
         console.error(`Section not found: ${sectionId}`);
       }
     }
-    setMenuOpen(false);
-    showNavbar();
+    setMenuOpen(false); // Close the mobile menu
+    showNavbar(); // Show the navbar after clicking a link
   };
 
   return (
     <nav className={`${styles.navbar} ${navbarVisible ? styles.visible : styles.hidden}`}>
+      {/* Logo */}
       <div className={styles.logo} onClick={() => handleNavClick("home")}>
         <img src="./images/LOCnavLogo.png" alt="Logo" />
       </div>
-      <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>
+
+      {/* Hamburger Menu */}
+      <div
+        className={styles.hamburger}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-expanded={menuOpen}
+      >
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
+
+      {/* Navigation Links */}
       <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
         {[
           { label: "Home", id: "home" },
