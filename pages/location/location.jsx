@@ -40,7 +40,7 @@ function Location() {
       textAlign: "left", // Align text to the left
       padding: "0 20px", // Add padding for better readability
       marginBottom: "20px",
-      "@media (max-width: 768px)": {
+      "@media (maxWidth: 768px)": {
         padding: "0 10px", // Adjust padding for mobile
       },
     },

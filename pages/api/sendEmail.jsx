@@ -2,6 +2,10 @@ import nodemailer from "nodemailer";
 import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
+  if (req.method === "GET") {
+    return res.status(200).json({ message: "API is working! Use POST to send data." });
+  }
+
   if (req.method === "POST") {
     const { name, email, phone, message } = req.body;
 
@@ -11,14 +15,13 @@ export default async function handler(req, res) {
     }
 
     // MongoDB connection
-    const uri = process.env.MONGODB_URI; // Ensure this is set in your .env file
+    const uri = process.env.MONGODB_URI;
     const client = new MongoClient(uri);
 
     try {
-      // Connect to MongoDB
       await client.connect();
-      const database = client.db("LOCcontacts"); // Replace with your database name
-      const collection = database.collection("contactSubmissions"); // Replace with your collection name
+      const database = client.db("LOCcontacts");
+      const collection = database.collection("contactSubmissions");
 
       // Save form data to MongoDB
       const result = await collection.insertOne({
@@ -35,31 +38,24 @@ export default async function handler(req, res) {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: process.env.EMAIL_USER, // Ensure this is set in your .env file
-          pass: process.env.EMAIL_PASS, // Ensure this is set in your .env file
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
         },
       });
 
       const mailOptions = {
         from: email,
-        to: "Mitsananikone@gmail.com", // Replace with your email
+        to: "Mitsananikone@gmail.com",
         subject: `New Contact Form Submission from ${name}`,
-        text: `
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "Not provided"}
-Message: ${message}
-        `,
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\nMessage: ${message}`,
       };
 
-      // Send email
       await transporter.sendMail(mailOptions);
       res.status(200).json({ success: true });
     } catch (error) {
       console.error("Error:", error);
       res.status(500).json({ error: "Failed to send email or save data" });
     } finally {
-      // Close the MongoDB connection
       await client.close();
     }
   } else {

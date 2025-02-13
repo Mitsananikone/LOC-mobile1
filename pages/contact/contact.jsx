@@ -20,34 +20,24 @@ function Contact() {
     setStatus("Sending...");
 
     try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000); // 10-second timeout
-
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-        signal: controller.signal, // Attach the abort signal
       });
 
-      clearTimeout(timeout); // Clear the timeout if the request completes
-
+      const data = await response.json();
       if (response.ok) {
         setStatus("Message sent successfully!");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        const errorData = await response.json();
-        setStatus(errorData.error || "Failed to send message. Please try again.");
+        setStatus(data.error || "Failed to send message.");
       }
     } catch (error) {
       console.error(error);
-      if (error.name === "AbortError") {
-        setStatus("Request timed out. Please try again.");
-      } else {
-        setStatus("Error sending message.");
-      }
+      setStatus("Error sending message.");
     }
   };
 
@@ -147,6 +137,7 @@ function Contact() {
       minHeight: "150px",
     },
     submitButton: {
+      top: "5vh",
       padding: "12px 25px",
       backgroundColor: "var(--primary-color)",
       color: "white",
@@ -262,11 +253,12 @@ function Contact() {
               style={styles.textarea}
             />
           </div>
+          {status && <p style={styles.statusMessage}>{status}</p>}
           <button type="submit" style={styles.submitButton}>
             Send
           </button>
         </form>
-        {status && <p style={styles.statusMessage}>{status}</p>}
+       
       </div>
     </div>
   );

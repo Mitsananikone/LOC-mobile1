@@ -40,7 +40,7 @@ function CommunityOutreach() {
       color: "var(--primary-color)",
       textAlign: "left",
       padding: "0 20px",
-      "@media (max-width: 768px)": {
+      "@media (maxWidth: 768px)": {
         padding: "0 10px",
       },
     },

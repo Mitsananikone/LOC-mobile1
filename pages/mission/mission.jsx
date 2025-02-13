@@ -79,7 +79,7 @@ function Mission() {
       flex: 1,
       maxWidth: "100%", // Take full width of the screen
       padding: "0 20px", // Add padding for better readability
-      "@media (max-width: 768px)": {
+      "@media (maxWidth: 768px)": {
         padding: "0 10px", // Adjust padding for mobile
       },
     },
@@ -105,7 +105,7 @@ function Mission() {
       lineHeight: "1.6",
       color: "var(--primary-color)",
       textAlign: "left", // Align points to the left
-      "@media (max-width: 768px)": {
+      "@media (maxWidth: 768px)": {
         textAlign: "left", // Keep text aligned left on mobile
       },
     },
@@ -124,7 +124,7 @@ function Mission() {
       border: "1px solid var(--primary-color)",
       borderRadius: "8px",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-      "@media (max-width: 768px)": {
+      "@media (maxWidth: 768px)": {
         maxWidth: "300px", // Reduce image size for mobile
       },
     },
@@ -134,7 +134,7 @@ function Mission() {
       color: "var(--primary-color)",
       textAlign: "left", // Center text
       padding: "0 20px", // Add padding for better readability
-      "@media (max-width: 768px)": {
+      "@media (maxWidth: 768px)": {
         padding: "0 10px", // Adjust padding for mobile
       },
     },
