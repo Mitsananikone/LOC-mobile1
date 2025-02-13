@@ -91,6 +91,7 @@ function About() {
             height="440px" // Adjust height as needed
             left="-20vw"
             backImage="url('/images/kintsugi.png')"
+            zIndex="2"
           >
             <div style={{ ...styles.parallelogramContent }}>
               <h2>Kintsugi means golden repair</h2>
