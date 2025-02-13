@@ -94,7 +94,7 @@ function About() {
             left="-20vw"
             backImage="url('/images/kintsugi.png')"
           >
-            <div style={{ ...styles.parallelogramContent, color: "var(--primary-color)" }}>
+            <div style={{ ...styles.parallelogramContent }}>
               <h2>Kintsugi means golden repair</h2>
               <br />
               <p>

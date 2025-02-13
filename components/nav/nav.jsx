@@ -1,19 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./nav.module.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(false); // State to control navbar visibility
+  const [timer, setTimer] = useState(null); // Timer for hiding the navbar
 
+  // Function to show the navbar and reset the timer
+  const showNavbar = () => {
+    setNavbarVisible(true); // Show the navbar
+    clearTimeout(timer); // Clear the existing timer
+    const newTimer = setTimeout(() => {
+      setNavbarVisible(false); // Hide the navbar after 10 seconds
+    }, 10000); // 10 seconds
+    setTimer(newTimer); // Store the new timer
+  };
+
+  // Add touch event listener to show the navbar
+  useEffect(() => {
+    const handleTouch = () => {
+      showNavbar();
+    };
+
+    // Add touch event listener
+    window.addEventListener("touchstart", handleTouch);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("touchstart", handleTouch);
+      clearTimeout(timer); // Clear the timer on unmount
+    };
+  }, [timer]);
+
+  // Function to handle navigation clicks
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
     setMenuOpen(false); // Close the mobile menu after clicking a link
+    showNavbar(); // Show the navbar and reset the timer
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav
+      className={`${styles.navbar} ${navbarVisible ? styles.visible : styles.hidden}`}
+    >
       {/* Logo */}
       <div className={styles.logo} onClick={() => handleNavClick("home")}>
         <img src="./images/LOCnavLogo.png" alt="Logo" />

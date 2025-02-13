@@ -2,6 +2,7 @@
 :root {
   --primary-color: #171F37;      /* Primary brand color */
   --secondary-color: #897349;   /* Secondary accent color */
+  --secondary-color-light: #A89A7B; 
   --background-color: #ffffff;    /* Tertiary highlight color */
   --foreground-color: #ededed;    /* Tertiary highlight color */
 

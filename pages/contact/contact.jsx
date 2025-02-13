@@ -73,7 +73,7 @@ function Contact() {
     socialMediaIcons: {
       display: "flex",
       justifyContent: "center",
-      gap: "40px",
+      gap: "20px",
     },
     icon: {
       width: "40px",
