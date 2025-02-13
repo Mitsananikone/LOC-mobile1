@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     try {
       // Connect to MongoDB
       await client.connect();
-      const database = client.db("your-database-name"); // Replace with your database name
+      const database = client.db("LOCcontacts"); // Replace with your database name
       const collection = database.collection("contactSubmissions"); // Replace with your collection name
 
       // Save form data to MongoDB

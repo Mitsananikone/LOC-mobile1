@@ -20,13 +20,19 @@ function Contact() {
     setStatus("Sending...");
 
     try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000); // 10-second timeout
+
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+        signal: controller.signal, // Attach the abort signal
       });
+
+      clearTimeout(timeout); // Clear the timeout if the request completes
 
       if (response.ok) {
         setStatus("Message sent successfully!");
@@ -37,7 +43,11 @@ function Contact() {
       }
     } catch (error) {
       console.error(error);
-      setStatus("Error sending message.");
+      if (error.name === "AbortError") {
+        setStatus("Request timed out. Please try again.");
+      } else {
+        setStatus("Error sending message.");
+      }
     }
   };
 
@@ -48,7 +58,6 @@ function Contact() {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      // backgroundColor: "var(--foreground-color)",
       color: "white",
       borderRadius: "20px",
       marginTop: "10vh",
@@ -85,15 +94,15 @@ function Contact() {
       alignItems: "center",
       cursor: "pointer",
       transition: "transform 0.2s ease",
-      overflow: "hidden", // Ensure the logo doesn't overflow the circle
+      overflow: "hidden",
       ":hover": {
         transform: "scale(1.1)",
       },
     },
     logoImage: {
-      width: "35px", // Adjust this size to fit inside the circle
-      height: "35px", // Adjust this size to fit inside the circle
-      objectFit: "contain", // Ensure the logo fits inside the circle without distortion
+      width: "35px",
+      height: "35px",
+      objectFit: "contain",
     },
     formContainer: {
       width: "100%",
@@ -162,7 +171,7 @@ function Contact() {
     <div style={styles.contactContainer}>
       {/* Social Media Box */}
       <div style={styles.socialMediaBox}>
-        <h2 style={styles.socialMediaTitle}>Follow us on <br/>social media!</h2>
+        <h2 style={styles.socialMediaTitle}>Follow us on <br />social media!</h2>
         <div style={styles.socialMediaIcons}>
           <div
             style={styles.icon}
