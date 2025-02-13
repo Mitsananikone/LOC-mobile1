@@ -85,7 +85,7 @@ function Services() {
     { id: 2, title: "Bible Study", image: "/images/services-bibleStudy.png", link: "/services/servicesInfo/bible-study" },
     { id: 3, title: "Youth Group", image: "/images/services-youthGroup.png", link: "/services/servicesInfo/youth-group" },
     { id: 4, title: "Community Outreach", image: "/images/services-communityOutreach.png", link: "/services/servicesInfo/community-outreach" },
-    { id: 5, title: "Prayer Meetings", image: "/images/services-prayerMeetings.png", link: "/services/servicesInfo/prayer-meetings" },
+    { id: 5, title: "Child Care", image: "/images/services-childcare.png", link: "/services/servicesInfo/child-care" },
     { id: 6, title: "Music Ministry", image: "/images/services-musicMinistery.png", link: "/services/servicesInfo/music-ministry" },
   ];
 

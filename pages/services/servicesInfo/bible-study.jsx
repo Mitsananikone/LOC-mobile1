@@ -62,7 +62,16 @@ function BibleStudy() {
 
   // Function to handle the back button click
   const handleBackClick = () => {
-    router.push("/"); // Navigate back to the main SPA
+    // Navigate to the root and then scroll to the services section
+    router.push("/").then(() => {
+      // Use a timeout to ensure the page has loaded before scrolling
+      setTimeout(() => {
+        const servicesSection = document.getElementById("services");
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Adjust the delay if needed
+    });
   };
 
   return (

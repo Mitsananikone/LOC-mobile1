@@ -125,7 +125,7 @@ function Contact() {
       borderRadius: "5px",
       fontSize: "1rem",
       backgroundColor: "white",
-      color: "var(--foreground-color)",
+      color: "var(--primary-color)",
     },
     textarea: {
       padding: "12px",
@@ -133,7 +133,7 @@ function Contact() {
       borderRadius: "5px",
       fontSize: "1rem",
       backgroundColor: "white",
-      color: "var(--foreground-color)",
+      color: "var(--primary-color)",
       resize: "vertical",
       minHeight: "150px",
     },

@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router"; // Import useRouter
 
-function CommunityOutreach() {
+function ChildCare() {
   const router = useRouter(); // Initialize the router
 
   const styles = {
@@ -78,14 +78,14 @@ function CommunityOutreach() {
     <div style={styles.centerContainer}>
       {/* Header */}
       <h1 style={styles.title}>
-        <i className="fa-solid fa-hands-helping"></i> Community Outreach
+        <i className="fa-solid fa-child"></i> Child Care
       </h1>
 
       {/* Image */}
       <div style={styles.imageContainer}>
         <img
-          src="/images/services-communityOutreach.png"
-          alt="Community Outreach"
+          src="/images/services-childCare.png"
+          alt="Child Care"
           style={styles.serviceImage}
         />
       </div>
@@ -93,14 +93,15 @@ function CommunityOutreach() {
       {/* Description */}
       <div style={styles.description}>
         <p>
-          Our Community Outreach programs are designed to make a positive impact
-          in Alvin and beyond. From food drives to volunteer projects, we're
-          committed to serving those in need and sharing the love of Jesus in
-          practical ways.
+          Our Child Care services provide a safe, nurturing, and fun environment
+          for your little ones while you attend to your commitments. We offer
+          supervised care for babies and children, ensuring they are well looked
+          after and engaged in age-appropriate activities.
         </p>
         <p>
-          Join us as we work together to make a difference in our community.
-          Everyone is welcome to participate, and no act of kindness is too small!
+          Our trained and caring staff are dedicated to creating a welcoming
+          space where your children can learn, play, and grow. You can have peace
+          of mind knowing your kids are in good hands!
         </p>
       </div>
 
@@ -112,4 +113,4 @@ function CommunityOutreach() {
   );
 }
 
-export default CommunityOutreach;
+export default ChildCare;
