@@ -5,8 +5,13 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, email, phone, message } = req.body;
 
+    // Validate required fields
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: "Name, email, and message are required" });
+    }
+
     // MongoDB connection
-    const uri = process.env.MONGODB_URI; // Add your MongoDB URI to .env
+    const uri = process.env.MONGODB_URI; // Ensure this is set in your .env file
     const client = new MongoClient(uri);
 
     try {
@@ -30,14 +35,14 @@ export default async function handler(req, res) {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: process.env.EMAIL_USER, // Use environment variable
-          pass: process.env.EMAIL_PASS, // Use environment variable
+          user: process.env.EMAIL_USER, // Ensure this is set in your .env file
+          pass: process.env.EMAIL_PASS, // Ensure this is set in your .env file
         },
       });
 
       const mailOptions = {
         from: email,
-        to: "Mitsananikone@gmail.com",
+        to: "Mitsananikone@gmail.com", // Replace with your email
         subject: `New Contact Form Submission from ${name}`,
         text: `
 Name: ${name}
@@ -51,7 +56,7 @@ Message: ${message}
       await transporter.sendMail(mailOptions);
       res.status(200).json({ success: true });
     } catch (error) {
-      console.error(error);
+      console.error("Error:", error);
       res.status(500).json({ error: "Failed to send email or save data" });
     } finally {
       // Close the MongoDB connection

@@ -68,11 +68,12 @@ function About() {
         {/* First Parallelogram */}
         <div style={styles.parallelogramWrapper}>
           <Parallelogram
-            width="400px" // Overlap the screen edges
+            width="300px" // Overlap the screen edges
             height="300px" // Adjust height as needed
             color="var(--secondary-color)"
             top="0vh"
-            left="-20vw" // Shift left to overlap the screen
+            left="0vw" // Shift left to overlap the screen
+            zIndex="-2"
           >
             <div style={styles.parallelogramContent}>
               <p>
@@ -87,8 +88,9 @@ function About() {
         {/* Second Parallelogram */}
         <div style={styles.parallelogramWrapper}>
           <Parallelogram
-            width="400px" // Overlap the screen edges
-            height="440px" // Adjust height as needed
+            width="500px" // Overlap the screen edges
+            height="420px" // Adjust height as needed
+            top="-3vh"
             left="-20vw"
             backImage="url('/images/Kintsugi.png')"
             zIndex="2"
