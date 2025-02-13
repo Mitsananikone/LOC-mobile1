@@ -44,7 +44,7 @@ const Navbar = () => {
       if (section) {
         console.log(`Section found: ${sectionId}`);
         const offset = 80; // Adjust this value if needed
-        const targetPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
+        const targetPosition = section.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({
           top: targetPosition,
           behavior: "smooth",
