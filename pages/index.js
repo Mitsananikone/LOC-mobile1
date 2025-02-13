@@ -17,8 +17,8 @@ const styles = {
     alignItems: "center",
     width: "100%",
     height: "auto", // Allow the container to grow based on content
-    overflow: "auto", // Enable vertical scrolling
-    overflowX: "hidden", // Disable horizontal scrolling
+    // overflow: "auto", // Enable vertical scrolling
+    // overflowX: "hidden", // Disable horizontal scrolling
     zIndex: 1,
   },
   background: {
