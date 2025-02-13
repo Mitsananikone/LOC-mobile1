@@ -141,7 +141,7 @@
   }
 
   .navLinks li {
-    font-size: 1.5rem; /* Larger text for mobile */
+    font-size: 1.2rem; /* Larger text for mobile */
     text-align: center; /* Center-align text */
     padding: 0.5rem 0; /* Add padding for better spacing */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add subtle divider */
