@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,11 @@ function Contact() {
   });
 
   const [status, setStatus] = useState("");
+  const [isClient, setIsClient] = useState(false); // New state to track client-side rendering
+
+  useEffect(() => {
+    setIsClient(true); // This ensures the code below only runs in the browser
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +46,7 @@ function Contact() {
     }
   };
 
-  // Styles
+  // Styles (unchanged)
   const styles = {
     contactContainer: {
       display: "flex",
@@ -164,46 +169,50 @@ function Contact() {
       <div style={styles.socialMediaBox}>
         <h2 style={styles.socialMediaTitle}>Follow us on <br />social media!</h2>
         <div style={styles.socialMediaIcons}>
-          <div
-            style={styles.icon}
-            onClick={() => window.open("https://www.facebook.com/profile.php?id=61565398850141", "_blank")}
-          >
-            <img
-              src="/images/facebook-icon.png"
-              alt="Facebook"
-              style={styles.logoImage}
-            />
-          </div>
-          <div
-            style={styles.icon}
-            onClick={() => window.open("https://instagram.com", "_blank")}
-          >
-            <img
-              src="/images/instagram-icon.png"
-              alt="Instagram"
-              style={styles.logoImage}
-            />
-          </div>
-          <div
-            style={styles.icon}
-            onClick={() => window.open("https://twitter.com", "_blank")}
-          >
-            <img
-              src="/images/x-icon.png"
-              alt="Twitter"
-              style={styles.logoImage}
-            />
-          </div>
-          <div
-            style={styles.icon}
-            onClick={() => window.open("https://snapchat.com", "_blank")}
-          >
-            <img
-              src="/images/snapchat-icon.png"
-              alt="Snapchat"
-              style={styles.logoImage}
-            />
-          </div>
+          {isClient && ( // Only render these if we're on the client side
+            <>
+              <div
+                style={styles.icon}
+                onClick={() => window.open("https://www.facebook.com/profile.php?id=61565398850141", "_blank")}
+              >
+                <img
+                  src="/images/facebook-icon.png"
+                  alt="Facebook"
+                  style={styles.logoImage}
+                />
+              </div>
+              <div
+                style={styles.icon}
+                onClick={() => window.open("https://instagram.com", "_blank")}
+              >
+                <img
+                  src="/images/instagram-icon.png"
+                  alt="Instagram"
+                  style={styles.logoImage}
+                />
+              </div>
+              <div
+                style={styles.icon}
+                onClick={() => window.open("https://twitter.com", "_blank")}
+              >
+                <img
+                  src="/images/x-icon.png"
+                  alt="Twitter"
+                  style={styles.logoImage}
+                />
+              </div>
+              <div
+                style={styles.icon}
+                onClick={() => window.open("https://snapchat.com", "_blank")}
+              >
+                <img
+                  src="/images/snapchat-icon.png"
+                  alt="Snapchat"
+                  style={styles.logoImage}
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -258,7 +267,6 @@ function Contact() {
             Send
           </button>
         </form>
-       
       </div>
     </div>
   );
